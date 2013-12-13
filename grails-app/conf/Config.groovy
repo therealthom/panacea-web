@@ -113,3 +113,12 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.web.panacea.security.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.web.panacea.security.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'com.web.panacea.security.Rol'
+
+grails.gorm.default.mapping = {
+    id generator: 'identity'
+}
