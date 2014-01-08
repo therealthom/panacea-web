@@ -64,7 +64,7 @@
     </ul>
   </li>
   <li>
-    <g:link controller="user">
+    <g:link controller="autorizacionDePromocion" action="create">
       <i class="icon-check"></i>
       <span class="menu-text">Autorizar Promoción</span>
     </g:link> 
