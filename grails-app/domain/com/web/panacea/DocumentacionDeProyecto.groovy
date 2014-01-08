@@ -2,6 +2,7 @@ package com.web.panacea
 
 class DocumentacionDeProyecto {
 
+    String nombre
     byte[] documento
     static belongsTo = [ promocionDeVersion : PromocionDeVersion ]
     
@@ -11,6 +12,6 @@ class DocumentacionDeProyecto {
     }
     
     String toString() {
-        "Documento ${id}"
+        "${nombre}"
     }
 }

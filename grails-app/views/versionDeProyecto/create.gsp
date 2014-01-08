@@ -1,9 +1,9 @@
-<%@ page import="com.web.panacea.PromocionDeVersion" %>
+<%@ page import="com.web.panacea.VersionDeProyecto" %>
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'promocionDeVersion.label', default: 'PromocionDeVersion')}" />
+    <g:set var="entityName" value="${message(code: 'versionDeProyecto.label', default: 'VersionDeProyecto')}" />
     <title><g:message code="default.create.label" args="[entityName]" /></title>
   </head>
   <body>
@@ -25,9 +25,9 @@
         </div>
       </g:if>
 
-      <g:hasErrors bean="${promocionDeVersionInstance}">
+      <g:hasErrors bean="${versionDeProyectoInstance}">
         <ul class="errors" role="alert">
-          <g:eachError bean="${promocionDeVersionInstance}" var="error">
+          <g:eachError bean="${versionDeProyectoInstance}" var="error">
             <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
           </g:eachError>
         </ul>

@@ -1,10 +1,10 @@
 
-<%@ page import="com.web.panacea.PromocionDeVersion" %>
+<%@ page import="com.web.panacea.VersionDeProyecto" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="layout" content="main">
-        <g:set var="entityName" value="${message(code: 'promocionDeVersion.label', default: 'PromocionDeVersion')}" />    
+        <g:set var="entityName" value="${message(code: 'versionDeProyecto.label', default: 'VersionDeProyecto')}" />    
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -35,23 +35,19 @@
                     <thead>
                         <tr>
                             
-                            <th><g:message code="promocionDeVersion.proyecto.label" default="Proyecto" /></th>
+                            <th><g:message code="versionDeProyecto.proyecto.label" default="Proyecto" /></th>
                                 
-                                <g:sortableColumn property="ambiente" title="${message(code: 'promocionDeVersion.ambiente.label', default: 'Ambiente')}" />
-                                
-                                <g:sortableColumn property="observaciones" title="${message(code: 'promocionDeVersion.observaciones.label', default: 'Observaciones')}" />
+                                <g:sortableColumn property="detalles" title="${message(code: 'versionDeProyecto.detalles.label', default: 'Detalles')}" />
                                 
                         </tr>
                     </thead>
                     <tbody>
-                        <g:each in="${promocionDeVersionInstanceList}" status="i" var="promocionDeVersionInstance">
+                        <g:each in="${versionDeProyectoInstanceList}" status="i" var="versionDeProyectoInstance">
                             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                 
-                                <td><g:link action="show" id="${promocionDeVersionInstance.id}">${fieldValue(bean: promocionDeVersionInstance, field: "proyecto")}</g:link></td>
+                                <td><g:link action="show" id="${versionDeProyectoInstance.id}">${fieldValue(bean: versionDeProyectoInstance, field: "proyecto")}</g:link></td>
                                 
-                                <td>${fieldValue(bean: promocionDeVersionInstance, field: "ambiente")}</td>
-                                
-                                <td>${fieldValue(bean: promocionDeVersionInstance, field: "observaciones")}</td>
+                                <td>${fieldValue(bean: versionDeProyectoInstance, field: "detalles")}</td>
                                 
                             </tr>
                         </g:each>

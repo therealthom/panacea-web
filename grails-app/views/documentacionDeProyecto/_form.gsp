@@ -1,7 +1,5 @@
 <%@ page import="com.web.panacea.DocumentacionDeProyecto" %>
 
-
-
 <div class="control-group fieldcontain ${hasErrors(bean: documentacionDeProyectoInstance, field: 'documento', 'error')} required">
 	<label for="documento" class="control-label">
 		<g:message code="documentacionDeProyecto.documento.label" default="Documento" />

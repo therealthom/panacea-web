@@ -35,6 +35,8 @@
                     <thead>
                         <tr>
                             
+                                <g:sortableColumn property="documento" title="${message(code: 'documentacionDeProyecto.documento.label', default: 'Documento')}" />
+                                
                             <th><g:message code="documentacionDeProyecto.promocionDeVersion.label" default="Promocion De Version" /></th>
                                 
                         </tr>
@@ -43,7 +45,9 @@
                         <g:each in="${documentacionDeProyectoInstanceList}" status="i" var="documentacionDeProyectoInstance">
                             <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                 
-                                <td><g:link action="show" id="${documentacionDeProyectoInstance.id}">${fieldValue(bean: documentacionDeProyectoInstance, field: "promocionDeVersion")}</g:link></td>
+                                <td><g:link action="show" id="${documentacionDeProyectoInstance.id}">${fieldValue(bean: documentacionDeProyectoInstance, field: "documento")}</g:link></td>
+                                
+                                <td>${fieldValue(bean: documentacionDeProyectoInstance, field: "promocionDeVersion")}</td>
                                 
                             </tr>
                         </g:each>

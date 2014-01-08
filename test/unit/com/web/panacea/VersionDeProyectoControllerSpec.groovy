@@ -5,9 +5,9 @@ package com.web.panacea
 import grails.test.mixin.*
 import spock.lang.*
 
-@TestFor(PromocionDeVersionController)
-@Mock(PromocionDeVersion)
-class PromocionDeVersionControllerSpec extends Specification {
+@TestFor(VersionDeProyectoController)
+@Mock(VersionDeProyecto)
+class VersionDeProyectoControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
@@ -21,8 +21,8 @@ class PromocionDeVersionControllerSpec extends Specification {
             controller.index()
 
         then:"The model is correct"
-            !model.promocionDeVersionInstanceList
-            model.promocionDeVersionInstanceCount == 0
+            !model.versionDeProyectoInstanceList
+            model.versionDeProyectoInstanceCount == 0
     }
 
     void "Test the create action returns the correct model"() {
@@ -30,31 +30,31 @@ class PromocionDeVersionControllerSpec extends Specification {
             controller.create()
 
         then:"The model is correctly created"
-            model.promocionDeVersionInstance!= null
+            model.versionDeProyectoInstance!= null
     }
 
     void "Test the save action correctly persists an instance"() {
 
         when:"The save action is executed with an invalid instance"
-            def promocionDeVersion = new PromocionDeVersion()
-            promocionDeVersion.validate()
-            controller.save(promocionDeVersion)
+            def versionDeProyecto = new VersionDeProyecto()
+            versionDeProyecto.validate()
+            controller.save(versionDeProyecto)
 
         then:"The create view is rendered again with the correct model"
-            model.promocionDeVersionInstance!= null
+            model.versionDeProyectoInstance!= null
             view == 'create'
 
         when:"The save action is executed with a valid instance"
             response.reset()
             populateValidParams(params)
-            promocionDeVersion = new PromocionDeVersion(params)
+            versionDeProyecto = new VersionDeProyecto(params)
 
-            controller.save(promocionDeVersion)
+            controller.save(versionDeProyecto)
 
         then:"A redirect is issued to the show action"
-            response.redirectedUrl == '/promocionDeVersion/show/1'
+            response.redirectedUrl == '/versionDeProyecto/show/1'
             controller.flash.message != null
-            PromocionDeVersion.count() == 1
+            VersionDeProyecto.count() == 1
     }
 
     void "Test that the show action returns the correct model"() {
@@ -66,11 +66,11 @@ class PromocionDeVersionControllerSpec extends Specification {
 
         when:"A domain instance is passed to the show action"
             populateValidParams(params)
-            def promocionDeVersion = new PromocionDeVersion(params)
-            controller.show(promocionDeVersion)
+            def versionDeProyecto = new VersionDeProyecto(params)
+            controller.show(versionDeProyecto)
 
         then:"A model is populated containing the domain instance"
-            model.promocionDeVersionInstance == promocionDeVersion
+            model.versionDeProyectoInstance == versionDeProyecto
     }
 
     void "Test that the edit action returns the correct model"() {
@@ -82,11 +82,11 @@ class PromocionDeVersionControllerSpec extends Specification {
 
         when:"A domain instance is passed to the edit action"
             populateValidParams(params)
-            def promocionDeVersion = new PromocionDeVersion(params)
-            controller.edit(promocionDeVersion)
+            def versionDeProyecto = new VersionDeProyecto(params)
+            controller.edit(versionDeProyecto)
 
         then:"A model is populated containing the domain instance"
-            model.promocionDeVersionInstance == promocionDeVersion
+            model.versionDeProyectoInstance == versionDeProyecto
     }
 
     void "Test the update action performs an update on a valid domain instance"() {
@@ -94,28 +94,28 @@ class PromocionDeVersionControllerSpec extends Specification {
             controller.update(null)
 
         then:"A 404 error is returned"
-            response.redirectedUrl == '/promocionDeVersion/index'
+            response.redirectedUrl == '/versionDeProyecto/index'
             flash.message != null
 
 
         when:"An invalid domain instance is passed to the update action"
             response.reset()
-            def promocionDeVersion = new PromocionDeVersion()
-            promocionDeVersion.validate()
-            controller.update(promocionDeVersion)
+            def versionDeProyecto = new VersionDeProyecto()
+            versionDeProyecto.validate()
+            controller.update(versionDeProyecto)
 
         then:"The edit view is rendered again with the invalid instance"
             view == 'edit'
-            model.promocionDeVersionInstance == promocionDeVersion
+            model.versionDeProyectoInstance == versionDeProyecto
 
         when:"A valid domain instance is passed to the update action"
             response.reset()
             populateValidParams(params)
-            promocionDeVersion = new PromocionDeVersion(params).save(flush: true)
-            controller.update(promocionDeVersion)
+            versionDeProyecto = new VersionDeProyecto(params).save(flush: true)
+            controller.update(versionDeProyecto)
 
         then:"A redirect is issues to the show action"
-            response.redirectedUrl == "/promocionDeVersion/show/$promocionDeVersion.id"
+            response.redirectedUrl == "/versionDeProyecto/show/$versionDeProyecto.id"
             flash.message != null
     }
 
@@ -124,23 +124,23 @@ class PromocionDeVersionControllerSpec extends Specification {
             controller.delete(null)
 
         then:"A 404 is returned"
-            response.redirectedUrl == '/promocionDeVersion/index'
+            response.redirectedUrl == '/versionDeProyecto/index'
             flash.message != null
 
         when:"A domain instance is created"
             response.reset()
             populateValidParams(params)
-            def promocionDeVersion = new PromocionDeVersion(params).save(flush: true)
+            def versionDeProyecto = new VersionDeProyecto(params).save(flush: true)
 
         then:"It exists"
-            PromocionDeVersion.count() == 1
+            VersionDeProyecto.count() == 1
 
         when:"The domain instance is passed to the delete action"
-            controller.delete(promocionDeVersion)
+            controller.delete(versionDeProyecto)
 
         then:"The instance is deleted"
-            PromocionDeVersion.count() == 0
-            response.redirectedUrl == '/promocionDeVersion/index'
+            VersionDeProyecto.count() == 0
+            response.redirectedUrl == '/versionDeProyecto/index'
             flash.message != null
     }
 }
