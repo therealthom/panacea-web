@@ -13,14 +13,6 @@
 <g:if test="${autorizacionDePromocionInstance?.promocionDeVersion}">
 <div class="control-group fieldcontain">
     <label class="control-label">
-        Nombre del Proyecto: 
-    </label>
-    <div class="controls">
-        ${autorizacionDePromocionInstance?.promocionDeVersion?.proyecto?.nombreDeProyecto}
-    </div>
-</div>
-<div class="control-group fieldcontain">
-    <label class="control-label">
         Ambiente: 
     </label>
     <div class="controls">
