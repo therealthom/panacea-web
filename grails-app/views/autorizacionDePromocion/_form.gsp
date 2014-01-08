@@ -10,6 +10,7 @@
     </div>
 </div>
 
+<g:if test="${autorizacionDePromocionInstance?.promocionDeVersion}">
 <div class="control-group fieldcontain">
     <label class="control-label">
         Nombre del Proyecto: 
@@ -26,7 +27,7 @@
         ${autorizacionDePromocionInstance?.promocionDeVersion?.ambiente}
     </div>
 </div>
-
+</g:if>
 
 <div class="control-group fieldcontain ${hasErrors(bean: autorizacionDePromocionInstance, field: 'fecha', 'error')} required">
     <label for="fecha" class="control-label">
