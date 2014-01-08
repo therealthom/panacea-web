@@ -1,19 +1,19 @@
-<%@ page import="com.web.panacea.ConfiguracionDeProyecto" %>
+<%@ page import="com.web.panacea.ConfiguracionDeProyecto;com.web.panacea.Repositorio" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta name="layout" content="main">
         <g:set var="entityName" value="${message(code: 'configuracionDeProyecto.label', default: 'ConfiguracionDeProyecto')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>Configuración de Proyecto</title>
     </head>
     <body>
         <div class="page-header position-relative">
-            <h1>Configurar Proyecto</h1>
+            <h1>Nueva Configuración de Proyecto</h1>
             <div class="btn-group">
                 <g:link class="btn btn-small tip-bottom" action="index">
                     <i class="icon-file"></i>
-                    Mostrar Lista de Proyectos
-                </g:link>
+                    Lista de Configuraciones Existentes
+                </g:link>                
             </div>
         </div>
 
@@ -33,11 +33,23 @@
                 </ul>
             </g:hasErrors>
 
-
+            <g:form class="form-horizontal" action="saveRepo" >
+                <div class="control-group fieldcontain">
+                    <label for="nombre" class="control-label">
+                        Nombre (Nuevo Repositorio)
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <div class="controls">
+                        <g:textField name="nombre" required="" value=""/>
+                        <g:submitButton name="create" class="btn btn-mini btn-primary" value="Crear Repositorio" />
+                    </div>
+                </div>
+                    
+            </g:form>
             <g:form class="form-horizontal" action="save" >
                 <g:render template="form"/>
                 <div class="form-actions">
-                    <g:submitButton name="create" class="btn btn-primary" value="Crear Proyecto" />
+                    <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </div>
             </g:form>
 

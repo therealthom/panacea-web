@@ -1,9 +1,9 @@
-<%@ page import="com.web.panacea.ConfiguracionDeProyecto" %>
+<%@ page import="com.web.panacea.Repositorio" %>
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'configuracionDeProyecto.label', default: 'ConfiguracionDeProyecto')}" />
+    <g:set var="entityName" value="${message(code: 'repositorio.label', default: 'Repositorio')}" />
     <title><g:message code="default.edit.label" args="[entityName]" /></title>
   </head>
   <body>
@@ -25,17 +25,17 @@
         </div>
       </g:if>
 
-      <g:hasErrors bean="${configuracionDeProyectoInstance}">
+      <g:hasErrors bean="${repositorioInstance}">
         <ul class="errors" role="alert">
-          <g:eachError bean="${configuracionDeProyectoInstance}" var="error">
+          <g:eachError bean="${repositorioInstance}" var="error">
             <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
           </g:eachError>
         </ul>
       </g:hasErrors>
 
           <g:form class="form-horizontal" method="post" >
-            <g:hiddenField name="id" value="${configuracionDeProyectoInstance?.id}" />
-            <g:hiddenField name="version" value="${configuracionDeProyectoInstance?.version}" />
+            <g:hiddenField name="id" value="${repositorioInstance?.id}" />
+            <g:hiddenField name="version" value="${repositorioInstance?.version}" />
             <g:render template="form"/>
             <div class="form-actions">
               <g:actionSubmit class="btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
